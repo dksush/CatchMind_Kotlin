@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color02"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color02"
+                android:orientation="horizontal">
+
+            <ImageView
+                    android:id="@+id/btn_back"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/kt_btn_24_whitebg_back_n"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="@color/color_333333"
+                    android:lineSpacingExtra="0dp"
+                    android:text="이메일"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"/>
+
+        </LinearLayout>
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                    <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="10dp">
+
+                        <EditText
+                                android:id="@+id/et_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="38dp"
+                                android:background="@drawable/btn_general_text_field_selector_new"
+                                android:gravity="center_vertical"
+                                android:hint="이메일"
+                                android:inputType="textEmailAddress"
+                                android:maxLines="1"
+                                android:paddingLeft="12dp"
+                                android:paddingRight="12dp"
+                                android:textColor="@color/color_666666"
+                                android:textColorHint="@color/color_cccccc"
+                                android:textSize="13dp"/>
+
+                        <!--<ImageView-->
+                        <!--android:id="@+id/btn_email_delete"-->
+                        <!--android:layout_width="44dp"-->
+                        <!--android:layout_height="44dp"-->
+                        <!--android:scaleType="center"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:src="@drawable/btn_edittext_delete_selector"-->
+                        <!--android:visibility="gone"/>-->
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="10dp">
+
+                        <EditText
+                                android:id="@+id/et_password"
+                                android:layout_width="match_parent"
+                                android:layout_height="38dp"
+                                android:background="@drawable/btn_general_text_field_selector_new"
+                                android:gravity="center_vertical"
+                                android:hint="비번"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:paddingLeft="12dp"
+                                android:paddingRight="12dp"
+                                android:textColor="@color/color_666666"
+                                android:textColorHint="@color/color_cccccc"
+                                android:textSize="13dp"/>
+
+                        <!--<ImageView-->
+                        <!--android:id="@+id/btn_password_delete"-->
+                        <!--android:layout_width="44dp"-->
+                        <!--android:layout_height="44dp"-->
+                        <!--android:scaleType="center"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:src="@drawable/btn_edittext_delete_selector"-->
+                        <!--android:visibility="gone"/>-->
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="10dp">
+
+                        <EditText
+                                android:id="@+id/et_password_confirm"
+                                android:layout_width="match_parent"
+                                android:layout_height="38dp"
+                                android:background="@drawable/btn_general_text_field_selector_new"
+                                android:gravity="center_vertical"
+                                android:hint="비번다시"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:paddingLeft="12dp"
+                                android:paddingRight="12dp"
+                                android:textColor="@color/color_666666"
+                                android:textColorHint="@color/color_cccccc"
+                                android:textSize="13dp"/>
+
+                        <!--<ImageView-->
+                        <!--android:id="@+id/btn_password_confirm_delete"-->
+                        <!--android:layout_width="44dp"-->
+                        <!--android:layout_height="44dp"-->
+                        <!--android:scaleType="center"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:src="@drawable/btn_edittext_delete_selector"-->
+                        <!--android:visibility="gone"/>-->
+
+                    </RelativeLayout>
+
+                    <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="18dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:fontFamily="sans-serif"-->
+                    <!--android:includeFontPadding="false"-->
+                    <!--android:paddingLeft="10dp"-->
+                    <!--android:paddingRight="10dp"-->
+                    <!--android:text="@string/charaters"-->
+                    <!--android:textColor="@color/color_333333"-->
+                    <!--android:textSize="15dp"/>-->
+
+
+                </LinearLayout>
+
+                <TextView
+                        android:id="@+id/btn_sign_up"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="가입하기"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                />
+
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>
