@@ -10,10 +10,24 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 import java.net.InetAddress
 import java.net.UnknownHostException
+import com.google.gson.GsonBuilder
+import com.google.gson.Gson
+
+
 
 class NetworkUtil {
 
+
+
+
     companion object {
+
+
+        var gson = GsonBuilder()
+            .setLenient()
+            .create()
+
+
         private var SAFE_DNS: Dns? = Dns { hostname ->
             try {
                 return@Dns Dns.SYSTEM.lookup(hostname)
@@ -71,7 +85,7 @@ class NetworkUtil {
                 } else {
                     retrofit = Retrofit.Builder().client(okHttpClient)
                         .baseUrl(baseUrl)
-                        .addConverterFactory(GsonConverterFactory.create())
+                        .addConverterFactory(GsonConverterFactory.create(gson))
                         .build()
                 }
             } catch (e: Exception) {
@@ -83,7 +97,7 @@ class NetworkUtil {
                 } else {
                     retrofit = Retrofit.Builder()
                         .baseUrl(baseUrl)
-                        .addConverterFactory(GsonConverterFactory.create())
+                        .addConverterFactory(GsonConverterFactory.create(gson))
                         .build()
                 }
             }
