@@ -1,5 +1,6 @@
 package com.example.catchmind_kotlin.activitys
 
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ import com.example.catchmind_kotlin.apis.NetworkUtil
 
 import com.example.catchmind_kotlin.databinding.ActivityRegisterBinding
 import com.example.catchmind_kotlin.models.registerResponse
+import com.example.catchmind_kotlin.util.SharedPreferencesManager
 import okhttp3.MediaType
 import okhttp3.RequestBody
 import org.json.JSONObject
@@ -23,6 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var mBinding : ActivityRegisterBinding
+    var sp : SharedPreferencesManager? = null
     internal var category_info: registerResponse? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,30 +56,6 @@ class RegisterActivity : AppCompatActivity() {
 
         jsonParams["id"] = mBinding.etEmail.text.toString()
         jsonParams["pw"] = mBinding.etPassword.text.toString()
-//        api.postRequest2(mBinding.etEmail.text.toString(),  mBinding.etPassword.text.toString()).enqueue(object :Callback<registerResponse>{
-//            override fun onFailure(call: Call<registerResponse>, t: Throwable) {
-//                Log.v("dksush1","d실패")
-//                Log.v("dksush1", t.message);
-//            }
-//
-//            override fun onResponse(call: Call<registerResponse>, response: Response<registerResponse>) {
-//
-//                Log.v("dksush code", response.code().toString());
-//                if(response.code() == 200){
-//
-//
-//                    category_info = response.body()
-//
-//                    Log.v("dksush2","성공")
-//                    Log.v("dksush2",response.message())
-//                    Log.v("dksush2", category_info?.category_info?.get(0)?.id)
-//                    //Toast.makeText(this@RegisterActivity, response.body()?.id, Toast.LENGTH_LONG).show()
-//
-//                }
-//            }
-//
-//        })
-
         api.postRequest(mBinding.etEmail.text.toString(),  mBinding.etPassword.text.toString()).enqueue(object : Callback<Void> {
             override fun onFailure(call: Call<Void>, t: Throwable) {
                 Log.v("dksush","d실패")
@@ -84,9 +63,17 @@ class RegisterActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
 
-                Log.v("dksushcode", response.code().toString())
-                if(response.code() == 200){
 
+                if(response.code() == 200){
+                    Toast.makeText(this@RegisterActivity, "가입가입", Toast.LENGTH_LONG).show()
+
+                    sp = SharedPreferencesManager(this@RegisterActivity)
+                    sp?.saveId(mBinding.etEmail.text.toString()) // 쉐어드에 아이디 저장.
+                    Log.v("dksush_shard", sp?.getId().toString())
+
+
+                    val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+                    startActivity(intent)
 
                 }
             }

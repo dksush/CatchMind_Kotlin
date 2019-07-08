@@ -1,7 +1,8 @@
-package com.example.catchmind_kotlin
+package com.example.catchmind_kotlin.activitys
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.catchmind_kotlin.R
 
 class MainActivity : AppCompatActivity() {
 

@@ -25,10 +25,11 @@ interface Api {
     fun postRequest2(@Body params: RequestBody): Call<LoginInfoResponse>
 
 
-    @FormUrlEncoded
+
+    @FormUrlEncoded // 회원가입.
     @POST("Register.php")
     fun postRequest(@Field("id") id:String,
-                    @Field("pw") pw:String) : Call<Void>
+                    @Field("pw") pw:String) : Call<Void> // 별도의 응답 형태가 아니라 연결 성공/실패 여부만 판단할시.
 
 
 
@@ -36,10 +37,5 @@ interface Api {
     @POST("Register.php")
     fun postRequest2(@Field("id") id:String,
                     @Field("pw") pw:String) : Call<registerResponse>
-//    @POST("register.php")
-//    fun postRequest(@Body params: RequestBody): Call<Void> // 별도의 응답 형태가 아니라 연결 성공/실패 여부만 판단할시.
-
-
-
 
 }
