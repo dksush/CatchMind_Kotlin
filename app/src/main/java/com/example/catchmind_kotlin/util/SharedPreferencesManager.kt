@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 
-class SharedPreferencesManager { // 코틀린 디폴트 컨스트럭터.
+class SharedPreferencesManager {
     var sp : SharedPreferences? = null
 
     // 생성자 : 클래스 선언부에 디폴트로 선언할수도 있다.
@@ -14,19 +14,20 @@ class SharedPreferencesManager { // 코틀린 디폴트 컨스트럭터.
 
     }
 
-    //로그인 저장
+    //로그인 체크
     fun saveId(id:String){
         var edit = sp?.edit()
         edit?.putString("id", id)
         edit?.apply()
     }
-
     fun getId(): String? {
         var data: String? = null
         data = sp?.getString("id","")
 
         return data
     }
+
+
 
 
 

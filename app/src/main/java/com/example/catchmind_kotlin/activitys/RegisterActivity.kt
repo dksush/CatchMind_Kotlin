@@ -26,7 +26,8 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var mBinding : ActivityRegisterBinding
     var sp : SharedPreferencesManager? = null
-    internal var category_info: registerResponse? = null
+   // internal var category_info: registerResponse? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, com.example.catchmind_kotlin.R.layout.activity_register)
@@ -41,9 +42,7 @@ class RegisterActivity : AppCompatActivity() {
 
     fun init(){
         // 회원가입하기 버튼
-        mBinding.btnSignUp.setOnClickListener {
-            register()
-        }
+        mBinding.btnSignUp.setOnClickListener { register() }
     }
 
 
@@ -63,14 +62,12 @@ class RegisterActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
 
-
                 if(response.code() == 200){
                     Toast.makeText(this@RegisterActivity, "가입가입", Toast.LENGTH_LONG).show()
 
                     sp = SharedPreferencesManager(this@RegisterActivity)
                     sp?.saveId(mBinding.etEmail.text.toString()) // 쉐어드에 아이디 저장.
                     Log.v("dksush_shard", sp?.getId().toString())
-
 
                     val intent = Intent(this@RegisterActivity, MainActivity::class.java)
                     startActivity(intent)

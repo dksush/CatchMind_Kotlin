@@ -42,8 +42,11 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
+        // 로그인
+        // 세부 처리 귀찮다.
         binding.btnLogin.setOnClickListener {
-
+            intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
 
